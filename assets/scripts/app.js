@@ -52,8 +52,6 @@ function multiply() {
   currentResult *= enteredNumber;
   createAndWriteOutput('*', currentResult, initialResult, enteredNumber);
   writeToLog('MULTIPLY', initialResult, enteredNumber, currentResult);
-
-  typeof 'max"';
 }
 
 function divide() {
@@ -68,5 +66,3 @@ addBtn.addEventListener('click', add);
 subtractBtn.addEventListener('click', subtract);
 multiplyBtn.addEventListener('click', multiply);
 divideBtn.addEventListener('click', divide);
-
-outputResult(currentResult, calcDescription);
