@@ -215,20 +215,157 @@ const game = {
     team2: 6.5,
   },
 };
-
+console.log('-----NUMBER 1');
 //1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
-let entries = Object.entries(game.scored);
+let gameScoredEntries = Object.entries(game.scored);
 
-for (let [goal, player] of entries) {
-  // can also code [...game.scored]
-  console.log(`GOAL: ${goal++ + 1} : ${player}`);
+for (let [goal, player] of gameScoredEntries) {
+  console.log(`GOAL: ${goal + 1} : ${player}`);
 }
 
 /* console.log(Object.entries(game.scored));
 console.log(Object.keys(game.scored));
 console.log(Object.values(game.scored)); */
 
+// 2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember) (DIRECRTLY USE OBJECTT, DONT DESTTRUCTURE INTO VARIABLES. CALC AVERAGE OF THE ELEMENTS IN TTHE OBJET)
+
+console.log('-----NUMBER 2');
+// 2. with DESTRUCTURING
+let gameOddsValue = Object.values(game.odds);
+let average = 0;
+
+for (let x in gameOddsValue) {
+  average += gameOddsValue[x] / gameOddsValue.length;
+}
+
+console.log(`Odd average is ${average}`);
+
+// 2. WITHOUT DESTRUCTURING:
+let newAverage = 0;
+for (let score of Object.values(game.odds)) {
+  newAverage += score / Object.values(game.odds).length;
+}
+console.log(`Deconstructed Odd average is ${newAverage}`);
+
+// 3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+//       Odd of victory Bayern Munich: 1.33
+//       Odd of draw: 3.25
+//       Odd of victory Borrussia Dortmund: 6.5
+// Get the team names directly from the game object, don't hardcode them (except for "draw").
+console.log('-----NUMBER 3');
+const gameOddsEntries = Object.entries(game.odds);
+for (let [team, score] of gameOddsEntries) {
+  console.log(
+    `Odd of`,
+    (team = 'x' ? `draw: ${score}` : `victory ${game[team]}: ${score}`)
+  );
+}
+
+// ^ HINT: Note how the odds and the game objects have the same property names 😉
+
 /* 
+
+
+BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }  
+
+*/
+
+// REDUCE
+/* console.log('----- BONUS');
+const countOccurrences = (arr, val) =>
+  arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+console.log(countOccurrences([1, 1, 2, 1, 2, 3], 1));
+ */
+console.log('^----------------BONUS ?');
+
+// var occurrence = function (array) {
+//   let result = {};
+//   array.forEach(function (v, i) {
+//     if (!result[v]) {
+//       // Initial object property creation.
+//       result[v] = [i]; // Create an array for that property.
+//     } else {
+//       // Same occurrences found.
+//       result[v].push(i); // Fill the array.
+//       console.log(v, i);
+//     }
+//   });
+
+//   console.log(result);
+//   return result;
+// };
+// occurrence(game.scored);
+
+/* var repeat = function (array) {
+  let result = {};
+  array.forEach(function (playerName, goal) {
+    if (!result[playerName]) {
+      result[playerName] = [goal];
+      console.log('no1------', playerName, goal);
+    } else {
+      result[playerName].push(goal);
+      console.log(playerName, goal);
+    }
+  });
+
+  console.log(result);
+  console.log();
+
+  return result;
+}; */
+
+const scores = {};
+for (let player of game.scored) {
+  scores[player] ? scores[player]++ : (scores[player] = 1);
+}
+console.log(scores);
+/* function goalsAmount(players, value) {
+  let count = 0;
+  players.forEach(x => x === count++);
+  console.log(players, count);
+}
+goalsAmount(gameScoredValues); */
+
+/* for (let x of gameScoredValues) {
+  console.log(x);
+} */
+
+// function f(...array) {
+//   var n = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     {
+//       if (array[i] === array[i]) {
+//         n++;
+//         console.log(n);
+//       } else {
+//         n === 1;
+//       }
+//     }
+//     console.log(...array, n);
+//   }
+// }
+// f(gameScoredValues);
+
+// function c(array) {
+//  let {scores[]}
+//   for (let x in array) {
+//     console.log(array[x]);
+//     console.log(repeat);
+//   }
+// }
+// c(gameScoredValues);
+
+// console.log(gameScoredValues.split());
+/* for (let name of gameScoredValues) {
+  let n = 0;
+  console.log(`${name} ${n++}`);
+} */
+/*
 Let's continue with our football betting app!
 
 1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
