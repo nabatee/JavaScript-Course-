@@ -16,32 +16,26 @@ const gameEvents = new Map([
 
 //1. Create an array 'events' of the different game events that happened (no duplicates)
 
-let events = [...new Set(gameEvents.values())];
-
+const events = new Set([...gameEvents.values()]);
 console.log(events);
 //2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
-console.log('BEFORE DELETION of unfair yellow card - ', gameEvents.size);
 gameEvents.delete(64);
-console.log('AFTER DELETION of unfair yellow card - ', gameEvents.size);
+console.log(gameEvents);
 
 //3. Print the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
-
 console.log(
   `An event happened, on average, every ${90 / gameEvents.size} minutes`
 );
-
 //4. Loop over the events and log them to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this:
 //    [FIRST HALF] 17: ⚽️ GOAL
-
-for (let [number, event] of gameEvents) {
+for (let [time, event] of gameEvents) {
   console.log(
-    number <= 45
-      ? `[FIRST HALF] ${number}: ${event}`
-      : `[SECOND HALF] ${number}: ${event}`
+    time < 45
+      ? `[FIRST HALF] ${time} ${event}`
+      : `[SECOND HALF] ${time} ${event}`
   );
 }
-
-/* 
+/*
 Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
 
 1. Create an array 'events' of the different game events that happened (no duplicates)
