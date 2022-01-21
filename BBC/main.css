@@ -1,0 +1,128 @@
+/*  HEAAADDDDDEEEERRRRR*/
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+header {
+  display: inline;
+  width: 100%;
+  position: fixed;
+  background: black;
+  color: #fff;
+  height: 5%;
+}
+
+.fixed-header img {
+  float: top;
+  width: 5%;
+
+  margin-top: 5px;
+  padding-right: 15px;
+}
+/*NAV*/
+
+nav {
+  display: inline;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+nav ul {
+  display: inline;
+}
+
+nav ul textarea {
+  text-align: left;
+}
+nav ul li {
+  display: inline;
+  padding-left: 2%;
+  padding-right: 2%;
+  border: 1px solid white;
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+header .sign {
+  padding-right: 4%;
+}
+nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+/*WELCOME */
+
+.welcome {
+  display: inline-block;
+}
+
+/*UNITED ARAB EMIRATES */
+.container {
+  position: relative;
+  width: 50%;
+  text-align: center;
+}
+
+.uae {
+  position: relative;
+  width: 50%;
+}
+
+.uae img {
+  position: relative;
+  width: 100%;
+  filter: invert(0.2);
+}
+/*MIDDLE EAST HEADLINE*/
+.uae h1 {
+  position: absolute;
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+  top: 15rem;
+}
+
+/*MIDDLE EAST PARAGRAPH */
+.uae .p1 {
+  position: absolute;
+  color: lightgray;
+  font-size: 1.4rem;
+  text-align: left;
+  top: 19rem;
+}
+
+.container .textUAE {
+  padding-left: 2rem;
+}
+
+/*MIDDLE EAST*/
+.uae .p2 {
+  position: absolute;
+  color: lightgray;
+  font-size: 1.4rem;
+  text-align: left;
+  top: 23rem;
+}
+
+/*RIGHT-SIDE*/
+.right-side {
+  position: relative;
+  width: 50%;
+}
+/*-AMERICA*/
+
+.usa {
+  position: relative;
+  width: 50%;
+  bottom: 50%;
+}
+.usa img {
+  position: 50%;
+  width: 100%;
+  filter: invert(0.2);
+}
+
+/*-vax*/
