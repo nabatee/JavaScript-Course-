@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+header,
+footer,
+section,
+article {
+  background-color: lightgray;
+  border: #333 solid 1px;
+}
+header,
+footer {
+  height: 130px;
+}
+
+header {
+  border-bottom: 0;
+}
+
+section {
+  height: 440px;
+}
+
+section > article {
+  height: inherit;
+  width: 16%;
+
+  float: left;
+  border-top: 0;
+  border-left: 0;
+}
+
+section > article + article {
+  height: inherit;
+  width: 16%;
+  border-right: 0;
+  border-left: #333 solid 1px;
+  float: right;
+}
+
+footer {
+  border-top: 0;
+}

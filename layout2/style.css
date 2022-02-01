@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+header,
+footer,
+section,
+article {
+  background: lightgray;
+  border: #444 solid 1px;
+}
+
+header,
+footer {
+  height: 120px;
+}
+
+header {
+  border-bottom: 0;
+}
+footer {
+  border-top: 0;
+}
+body > section {
+  height: 190px;
+}
+body > section + section {
+  height: 250px;
+  border-top: 0;
+}
+
+body > section + section > article {
+  height: inherit;
+  width: 33.33%;
+
+  float: left;
+  border-top: 0;
+  border-left: 0;
+}
+body > section + section > article + article {
+  height: inherit;
+  width: 66.66%;
+  border-right: 0;
+  border-left: 0;
+}

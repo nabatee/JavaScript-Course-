@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+section {
+  background: lightgray;
+  border: 1px solid black;
+}
+
+.top,
+.bottom {
+  height: 125px;
+
+  clear: both;
+}
+
+.second-section {
+  height: 190px;
+}
+
+.smallbox {
+  width: 33.33%;
+  height: inherit;
+  float: left;
+  border: 3px solid black;
+}
+
+.third-section {
+  height: 250px;
+}
+
+.bigbox {
+  width: 50%;
+  height: inherit;
+  float: left;
+}
