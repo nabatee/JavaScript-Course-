@@ -42,3 +42,48 @@ section > article + article {
 footer {
   border-top: 0;
 }
+
+/*PC*/
+
+@media screen and (min-device-width: 1080px) and (max-device-width: 1920px) {
+  footer {
+    background-color: black;
+  }
+}
+
+/*iPAD*/
+
+/* iPad Responsive */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  footer {
+    width: 100%;
+  }
+
+  section > article {
+    height: 150px;
+    width: 100%;
+  }
+  section > article + article {
+    height: 288px;
+
+    width: 33.33%;
+    border-right: 0;
+    border-left: #333 solid 1px;
+  }
+}
+
+/* PHONE */
+@media only screen and (min-device-width: 375px) and (max-device-width: 767px) {
+  section > article {
+    height: 120px;
+    width: 100%;
+  }
+
+  section > article + article {
+    height: 107px;
+
+    width: 100%;
+    border-right: 0;
+    border-left: #333 solid 1px;
+  }
+}
